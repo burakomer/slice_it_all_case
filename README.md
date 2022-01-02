@@ -1,1 +1,3 @@
-# slice_it_all_case
+# Cut It All
+
+Slice It All clone.
