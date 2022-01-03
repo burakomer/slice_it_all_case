@@ -64,9 +64,9 @@ public class PlayerController : MonoBehaviour
         {
             otherGO.GetComponent<ICuttable>().Cut(transform.position);
         }
-        else if (otherGO.CompareTag(GameTags.Ground))
+        else if (otherGO.CompareTag(GameTags.Ground) || otherGO.CompareTag(GameTags.Finish) || otherGO.CompareTag(GameTags.GameOver))
         {
-            if (_rb.velocity.y > 0) return;
+            if (otherGO.CompareTag(GameTags.Ground) && _rb.velocity.y > 0) return;
             _movementTween?.Kill();
             transform.DOKill();
 
